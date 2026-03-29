@@ -24,6 +24,22 @@ layout: home
       <a href="/tools/" class="nav-link">工具集</a>
       <a href="/snippets/" class="nav-link">代码片段</a>
     </div>
+    <div class="stats-row">
+      <div class="stat">
+        <span class="stat-value" id="counter1">0</span>
+        <span class="stat-label">NOTES</span>
+      </div>
+      <div class="stat-divider">|</div>
+      <div class="stat">
+        <span class="stat-value" id="counter2">0</span>
+        <span class="stat-label">TOOLS</span>
+      </div>
+      <div class="stat-divider">|</div>
+      <div class="stat">
+        <span class="stat-value" id="counter3">0</span>
+        <span class="stat-label">SNIPPETS</span>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -37,6 +53,7 @@ const texts = [
 ]
 
 onMounted(() => {
+  // 打字效果
   const typingEl = document.getElementById('typing')
   let textIndex = 0
   let charIndex = 0
@@ -67,6 +84,31 @@ onMounted(() => {
   }
 
   type()
+
+  // 计数器动画
+  function animateCounter(id, target, duration = 1500) {
+    const el = document.getElementById(id)
+    const startTime = performance.now()
+
+    function update(currentTime) {
+      const elapsed = currentTime - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      const eased = 1 - Math.pow(1 - progress, 3)
+      el.textContent = Math.floor(eased * target)
+
+      if (progress < 1) {
+        requestAnimationFrame(update)
+      }
+    }
+
+    requestAnimationFrame(update)
+  }
+
+  setTimeout(() => {
+    animateCounter('counter1', 5)
+    animateCounter('counter2', 16)
+    animateCounter('counter3', 3)
+  }, 500)
 })
 </script>
 
@@ -150,6 +192,7 @@ onMounted(() => {
   justify-content: center;
   gap: 0.875rem;
   flex-wrap: wrap;
+  margin-bottom: 2.5rem;
 }
 
 .nav-link {
@@ -167,6 +210,37 @@ onMounted(() => {
 .nav-link:hover {
   border-color: var(--vp-c-brand);
   color: var(--vp-c-brand);
+}
+
+/* 统计数据 */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 700;
+  color: var(--vp-c-brand);
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  color: var(--vp-c-text-3);
+  letter-spacing: 0.2em;
+}
+
+.stat-divider {
+  color: var(--vp-c-divider);
+  font-size: 1.25rem;
 }
 
 @media (max-width: 640px) {
@@ -196,6 +270,18 @@ onMounted(() => {
   .nav-link {
     padding: 0.6rem 1.2rem;
     font-size: 0.85rem;
+  }
+
+  .stats-row {
+    gap: 1rem;
+  }
+
+  .stat-divider {
+    display: none;
+  }
+
+  .stat {
+    padding: 0 0.5rem;
   }
 }
 </style>
