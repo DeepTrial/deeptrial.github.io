@@ -1,33 +1,17 @@
 # 技术知识库
 
-这里记录工作中遇到的技术问题与解决方案。
+编译器与底层技术的探索与实践。
 
-## 目录结构
+## 目录
 
 | 目录 | 说明 |
 |------|------|
-| [后端](/notes/backend/) | 后端开发相关笔记 |
-| [前端](/notes/frontend/) | 前端开发相关笔记 |
-| [DevOps](/notes/devops/) | 运维、部署、CI/CD |
-| [问题排查](/notes/troubleshooting/) | 问题排查记录与复盘 |
+| [编译器构造](/notes/compiler/) | 词法/语法分析、IR设计 |
+| [LLVM](/notes/llvm/) | Pass开发、优化、代码生成 |
+| [程序分析](/notes/analysis/) | 数据流、指针分析、静态检查 |
+| [运行时系统](/notes/runtime/) | 内存管理、GC、调用约定 |
+| [体系结构](/notes/architecture/) | 指令集、缓存优化、SIMD |
 
-## 如何添加新笔记
+---
 
-1. 在对应目录下新建 `.md` 文件
-2. 使用 Markdown 格式编写
-3. 文件会自动出现在侧边栏
-
-## 笔记模板
-
-```markdown
-# 标题
-
-## 问题背景
-描述遇到的问题
-
-## 解决方案
-详细的解决步骤
-
-## 参考资料
-- [链接](url)
-```
+> "A compiler is a bridge between human thought and machine execution."

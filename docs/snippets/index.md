@@ -1,25 +1,11 @@
 # 代码片段
 
-常用代码模板、配置文件、命令速查。
+编译器开发常用代码模板。
 
 ## 目录
 
 | 目录 | 说明 |
 |------|------|
-| [Docker](/snippets/docker/) | Docker 常用命令与 Compose 模板 |
-| [Git](/snippets/git/) | Git 常用命令速查 |
-| [配置文件](/snippets/configs/) | 常用配置文件模板 |
-
-## 如何添加
-
-在对应目录下新建 `.md` 文件，使用代码块格式：
-
-````markdown
-# 标题
-
-简要说明
-
-```语言
-代码内容
-```
-````
+| [LLVM Pass](/snippets/llvm-pass/) | Pass 开发模板 |
+| [IR 示例](/snippets/ir-examples/) | LLVM IR 代码模式 |
+| [构建工具](/snippets/build-tools/) | CMake/Meson 配置 |

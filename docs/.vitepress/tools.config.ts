@@ -8,31 +8,38 @@ export interface Tool {
   url: string
   description: string
   category: string
-  icon?: string // 可选：图标emoji
+  icon?: string
 }
 
 export const tools: Tool[] = [
-  // ============ 数据格式 ============
+  // ============ 编译器工具 ============
   {
-    name: 'JSON格式化',
-    url: 'https://json.cn',
-    description: 'JSON在线解析、格式化、压缩',
-    category: '数据格式',
-    icon: '📋'
+    name: 'Compiler Explorer',
+    url: 'https://godbolt.org',
+    description: '在线编译器对比，实时查看汇编输出',
+    category: '编译器工具',
+    icon: '⚙️'
   },
   {
-    name: 'JSON Editor Online',
-    url: 'https://jsoneditoronline.org',
-    description: '可视化JSON编辑器',
-    category: '数据格式',
-    icon: '📝'
+    name: 'LLVM Playground',
+    url: 'https://llvm.org/demo',
+    description: 'LLVM IR在线生成与优化',
+    category: '编译器工具',
+    icon: '🔧'
   },
   {
-    name: 'YAML转JSON',
-    url: 'https://www.json2yaml.com',
-    description: 'YAML与JSON互转',
-    category: '数据格式',
-    icon: '📄'
+    name: 'Binary Ninja',
+    url: 'https://cloud.binary.ninja',
+    description: '在线反汇编与二进制分析',
+    category: '编译器工具',
+    icon: '🔬'
+  },
+  {
+    name: 'C++ Insights',
+    url: 'https://cppinsights.io',
+    description: '查看C++代码的编译器视角展开',
+    category: '编译器工具',
+    icon: '👁️'
   },
 
   // ============ 开发工具 ============
@@ -44,18 +51,34 @@ export const tools: Tool[] = [
     icon: '🔍'
   },
   {
-    name: 'CodePen',
-    url: 'https://codepen.io',
-    description: '前端代码在线编辑器',
+    name: 'QuickType',
+    url: 'https://app.quicktype.io',
+    description: 'JSON/Schema转多语言结构体',
     category: '开发工具',
-    icon: '✏️'
+    icon: '📝'
   },
   {
-    name: 'JSFiddle',
-    url: 'https://jsfiddle.net',
-    description: 'Web开发在线测试',
+    name: 'Carbon',
+    url: 'https://carbon.now.sh',
+    description: '代码片段美化截图',
     category: '开发工具',
-    icon: '🕸️'
+    icon: '📸'
+  },
+
+  // ============ 数据格式 ============
+  {
+    name: 'JSON格式化',
+    url: 'https://json.cn',
+    description: 'JSON在线解析、格式化、压缩',
+    category: '数据格式',
+    icon: '📋'
+  },
+  {
+    name: 'YAML转JSON',
+    url: 'https://www.json2yaml.com',
+    description: 'YAML与JSON互转',
+    category: '数据格式',
+    icon: '📄'
   },
 
   // ============ 编码转换 ============
@@ -74,45 +97,35 @@ export const tools: Tool[] = [
     icon: '🔢'
   },
   {
-    name: 'URL编解码',
-    url: 'https://tool.chinaz.com/tools/urlencode.aspx',
-    description: 'URL编码与解码',
+    name: 'Hex编辑器',
+    url: 'https://hexed.it',
+    description: '在线十六进制编辑器',
     category: '编码转换',
-    icon: '🔗'
+    icon: '🔢'
   },
 
-  // ============ 网络工具 ============
+  // ============ 文档资源 ============
   {
-    name: 'IP查询',
-    url: 'https://ip.sb',
-    description: '查看当前IP地址',
-    category: '网络工具',
-    icon: '🌐'
-  },
-  {
-    name: 'Speed Test',
-    url: 'https://www.speedtest.net',
-    description: '网速测试',
-    category: '网络工具',
-    icon: '⚡'
-  },
-
-  // ============ 文档工具 ============
-  {
-    name: 'MDN Web Docs',
-    url: 'https://developer.mozilla.org',
-    description: 'Web技术权威文档',
-    category: '文档工具',
+    name: 'LLVM Docs',
+    url: 'https://llvm.org/docs',
+    description: 'LLVM官方文档',
+    category: '文档资源',
     icon: '📚'
   },
   {
-    name: 'DevDocs',
-    url: 'https://devdocs.io',
-    description: '多语言API文档聚合',
-    category: '文档工具',
+    name: 'x86指令集',
+    url: 'https://www.felixcloutier.com/x86',
+    description: 'x86指令集参考手册',
+    category: '文档资源',
     icon: '📖'
+  },
+  {
+    name: 'OSDev Wiki',
+    url: 'https://wiki.osdev.org',
+    description: '操作系统开发百科',
+    category: '文档资源',
+    icon: '💾'
   }
 ]
 
-// 获取所有分类
 export const categories = [...new Set(tools.map(t => t.category))]

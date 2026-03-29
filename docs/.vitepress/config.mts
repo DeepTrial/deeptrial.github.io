@@ -1,8 +1,8 @@
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
-  title: '知识库',
-  description: '个人技术知识库、工具集、代码片段',
+  title: 'DeepTrial',
+  description: '编译器与底层技术知识库',
   lang: 'zh-CN',
 
   // GitHub Pages 部署配置
@@ -11,7 +11,7 @@ export default defineConfig({
   // 美观主题配置
   themeConfig: {
     logo: '/logo.svg',
-    siteTitle: '知识库',
+    siteTitle: 'DeepTrial',
 
     // 导航栏
     nav: [
@@ -25,13 +25,14 @@ export default defineConfig({
     sidebar: {
       '/notes/': [
         {
-          text: '技术知识库',
+          text: '知识库',
           items: [
             { text: '概述', link: '/notes/' },
-            { text: '后端', link: '/notes/backend/' },
-            { text: '前端', link: '/notes/frontend/' },
-            { text: 'DevOps', link: '/notes/devops/' },
-            { text: '问题排查', link: '/notes/troubleshooting/' }
+            { text: '编译器构造', link: '/notes/compiler/' },
+            { text: 'LLVM', link: '/notes/llvm/' },
+            { text: '程序分析', link: '/notes/analysis/' },
+            { text: '运行时系统', link: '/notes/runtime/' },
+            { text: '体系结构', link: '/notes/architecture/' }
           ]
         }
       ],
@@ -40,9 +41,9 @@ export default defineConfig({
           text: '代码片段',
           items: [
             { text: '概述', link: '/snippets/' },
-            { text: 'Docker', link: '/snippets/docker/' },
-            { text: 'Git', link: '/snippets/git/' },
-            { text: '配置文件', link: '/snippets/configs/' }
+            { text: 'LLVM Pass', link: '/snippets/llvm-pass/' },
+            { text: 'IR 示例', link: '/snippets/ir-examples/' },
+            { text: '构建工具', link: '/snippets/build-tools/' }
           ]
         }
       ]
