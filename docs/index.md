@@ -5,13 +5,7 @@ layout: home
 <div class="hero-container">
   <div class="matrix-bg"></div>
   <div class="hero-content">
-    <pre class="ascii-art">
- ____  _____ ____   _____ ___ __  __ _____   __  __    _    ____ _   _ ___ _   _ _____
-|  _ \| ____|  _ \ / / _ \_ _|  \/  | ____| |  \/  |  / \  / ___| | | |_ _| \ | | ____|
-| | | |  _| | |_) / /| | | | || |\/| |  _|   | |\/| | / _ \| |   | |_| || ||  \| |  _|
-| |_| | |___|  __/ /_| |_| | || |  | | |___  | |  | |/ ___ \ |___|  _  || || |\  | |___
-|____/|_____|_| /____\___/___|_|  |_|_____| |_|  |_/_/   \_\____|_| |_|___|_| \_|_____|
-    </pre>
+    <h1 class="brand-title">DEEPtrial</h1>
     <div class="typing-container">
       <span class="prompt">$</span>
       <span class="typing-text" id="typing"></span>
@@ -138,14 +132,17 @@ onMounted(() => {
   z-index: 1;
 }
 
-.ascii-art {
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  font-size: clamp(4px, 1.4vw, 10px);
-  line-height: 1.3;
+.brand-title {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-weight: 700;
   color: var(--vp-c-brand);
-  margin-bottom: 2rem;
-  white-space: pre;
-  overflow-x: auto;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, var(--vp-c-brand) 0%, #58a6ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .typing-container {
@@ -211,7 +208,6 @@ onMounted(() => {
   color: var(--vp-c-brand);
 }
 
-/* 统计数据 */
 .stats-row {
   display: flex;
   justify-content: center;
@@ -243,19 +239,8 @@ onMounted(() => {
 }
 
 @media (max-width: 640px) {
-  .ascii-art {
-    display: none;
-  }
-
-  .hero-content::before {
-    content: "DEEPtrial";
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--vp-c-brand);
-    margin-bottom: 1.5rem;
-    display: block;
-    letter-spacing: 0.05em;
+  .brand-title {
+    font-size: 2rem;
   }
 
   .typing-container {
