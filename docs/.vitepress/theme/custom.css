@@ -1,0 +1,124 @@
+/* 自定义样式 */
+
+/* 渐变背景首页 */
+.home-hero {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 4rem 2rem;
+  text-align: center;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+}
+
+.home-hero h1 {
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.home-hero p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+}
+
+/* 特色卡片 */
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.feature-card {
+  padding: 1.5rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 12px;
+  background: var(--vp-c-bg);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border-color: var(--vp-c-brand);
+}
+
+.feature-card h3 {
+  margin-top: 0;
+  color: var(--vp-c-text-1);
+}
+
+.feature-card p {
+  color: var(--vp-c-text-2);
+  line-height: 1.6;
+}
+
+/* 代码块增强 */
+div[class*='language-'] {
+  border-radius: 12px;
+}
+
+/* 侧边栏优化 */
+.VPSidebar {
+  font-size: 0.9rem;
+}
+
+/* 导航栏优化 */
+.VPNav {
+  backdrop-filter: blur(12px);
+}
+
+/* 链接hover效果 */
+.vp-doc a {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--vp-c-brand);
+  transition: all 0.2s;
+}
+
+.vp-doc a:hover {
+  border-bottom-style: solid;
+}
+
+/* 标签样式 */
+.tag {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  background: var(--vp-c-brand-light);
+  color: var(--vp-c-brand);
+  margin-right: 0.3rem;
+}
+
+/* 引用块样式 */
+.custom-block {
+  border-radius: 8px;
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-divider);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
+}
+
+/* 页面过渡 */
+.VPContent {
+  transition: background-color 0.3s;
+}
+
+/* 搜索框美化 */
+.DocSearch-Button {
+  border-radius: 8px !important;
+}
