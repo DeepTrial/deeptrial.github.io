@@ -2,14 +2,8 @@
 layout: home
 ---
 
-<div class="hero-geek">
-  <div class="terminal-header">
-    <span class="dot red"></span>
-    <span class="dot yellow"></span>
-    <span class="dot green"></span>
-    <span class="title">~/deeptrial</span>
-  </div>
-  <div class="terminal-body">
+<div class="hero-container">
+  <div class="hero-content">
     <pre class="ascii-art">
  ██████╗ ███████╗██████╗  █████╗ ████████╗███████╗██████╗ ██████╗ ███████╗
  ██╔══██╗██╔════╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗██╔══██╗██╔════╝
@@ -18,150 +12,92 @@ layout: home
  ██████╔╝███████╗██║  ██║██║  ██║   ██║   ███████╗██║  ██║██████╔╝███████╗
  ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝
     </pre>
-    <div class="intro">
-      <p class="line"><span class="comment">// 编译器 · 程序分析 · 底层技术</span></p>
-      <p class="line"><span class="keyword">let</span> <span class="var">knowledge</span> = <span class="string">"探索程序的本质"</span>;</p>
-    </div>
-    <div class="nav-links">
-      <a href="/notes/" class="nav-btn">
-        <span class="icon">📖</span>
-        <span>知识库</span>
-      </a>
-      <a href="/tools/" class="nav-btn">
-        <span class="icon">🛠️</span>
-        <span>工具集</span>
-      </a>
-      <a href="/snippets/" class="nav-btn">
-        <span class="icon">📦</span>
-        <span>代码片段</span>
-      </a>
+    <div class="tagline">编译器 · 程序分析 · 底层技术</div>
+    <div class="nav-row">
+      <a href="/notes/" class="nav-link">知识库</a>
+      <a href="/tools/" class="nav-link">工具集</a>
+      <a href="/snippets/" class="nav-link">代码片段</a>
     </div>
   </div>
 </div>
 
 <style>
-.hero-geek {
-  background: #0d1117;
-  border-radius: 16px;
-  overflow: hidden;
-  margin: 2rem 0;
-  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
-  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.terminal-header {
-  background: #161b22;
-  padding: 12px 16px;
+.hero-container {
+  min-height: 70vh;
   display: flex;
   align-items: center;
-  gap: 8px;
-  border-bottom: 1px solid #30363d;
+  justify-content: center;
+  padding: 2rem 1rem;
 }
 
-.dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-}
-
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-
-.terminal-header .title {
-  margin-left: 12px;
-  color: #8b949e;
-  font-size: 13px;
-}
-
-.terminal-body {
-  padding: 32px;
+.hero-content {
+  text-align: center;
+  max-width: 100%;
 }
 
 .ascii-art {
-  color: #58a6ff;
-  font-size: 10px;
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+  font-size: clamp(4px, 1.5vw, 10px);
   line-height: 1.3;
-  margin-bottom: 28px;
+  color: #58a6ff;
+  margin-bottom: 2rem;
+  white-space: pre;
   overflow-x: auto;
-  text-align: center;
 }
 
-.intro {
-  margin-bottom: 32px;
-  font-size: 15px;
+.tagline {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  color: var(--vp-c-text-2);
+  margin-bottom: 2.5rem;
+  letter-spacing: 0.1em;
 }
 
-.intro .line {
-  margin: 8px 0;
-}
-
-.intro .comment {
-  color: #8b949e;
-}
-
-.intro .keyword {
-  color: #ff7b72;
-}
-
-.intro .var {
-  color: #79c0ff;
-}
-
-.intro .string {
-  color: #a5d6ff;
-}
-
-.nav-links {
+.nav-row {
   display: flex;
-  gap: 12px;
+  justify-content: center;
+  gap: 1rem;
   flex-wrap: wrap;
 }
 
-.nav-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 10px 20px;
-  background: #21262d;
-  border: 1px solid #30363d;
+.nav-link {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid var(--vp-c-divider);
   border-radius: 8px;
-  color: #c9d1d9;
+  color: var(--vp-c-text-1);
   text-decoration: none;
-  font-size: 14px;
+  font-size: 0.95rem;
   transition: all 0.2s ease;
+  background: var(--vp-c-bg);
 }
 
-.nav-btn:hover {
-  background: #30363d;
-  border-color: #58a6ff;
-  color: #58a6ff;
+.nav-link:hover {
+  border-color: var(--vp-c-brand);
+  color: var(--vp-c-brand);
+  transform: translateY(-2px);
 }
 
-.nav-btn .icon {
-  font-size: 16px;
-}
-
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .ascii-art {
-    font-size: 6px;
-    line-height: 1.2;
+    display: none;
   }
 
-  .terminal-body {
-    padding: 24px 16px;
+  .hero-container::before {
+    content: "DEEPtrial";
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--vp-c-brand);
+    margin-bottom: 1.5rem;
+    display: block;
   }
 
-  .intro {
-    font-size: 13px;
+  .tagline {
+    font-size: 1rem;
   }
 
-  .nav-btn {
-    padding: 8px 16px;
-    font-size: 13px;
+  .nav-link {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
   }
 }
 </style>
